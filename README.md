@@ -1,4 +1,4 @@
-seandrickson.github.com
-=======================
+seandrickson.github.io
+======================
 
 My website. Hello World.
