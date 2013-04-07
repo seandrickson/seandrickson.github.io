@@ -5,12 +5,13 @@
 // VARIABLES
 //=====================================
 
-$white: #fff;
-$light: #eee;
-$dark: #444;
-$cyan: #0cc;
-$teal: #099;
-$light-cyan: #3ff;
+$white:   #fff;
+$lt-gray: #eee;
+$og-gray: #999;
+$dk-gray: #444;
+$lt-cyan: #3cf;
+$og-cyan: #0af;
+$dk-cyan: #09c;
 
 //
 // BASE
@@ -25,10 +26,10 @@ input,
 button,
 fieldset {
 	font: 300 100%/1.5 'source-sans-pro', sans-serif;
-	color: $dark;
+	color: $dk-gray;
 }
 html {
-	background: $light;
+	background: $lt-gray;
 }
 
 html { // Vertical center component
@@ -54,28 +55,22 @@ body {
 
 .wrapper {
 	background: $white;
-	box-shadow: inset 1px 0 1px -1px #666, inset -1px 0 1px -1px #666;
+	@include box-shadow(inset 1px 0 1px -1px #666, inset -1px 0 1px -1px #666);
 }
 
 .black {
-	color: $light;
-	background: $dark;
+	color: $lt-gray;
+	background: $dk-gray;
 }
 
 .row {
 	@include clearfix;
 }
 
-
 .inline-list {
-	@include clearfix;
-	margin: 0;
-	padding: 0;
-	display: block;
+	@include inline-block-list;
 	
 	li {
-		display: inline-block;
-		list-style: none;
 		padding: 1%;
 	}
 }
@@ -96,30 +91,26 @@ body {
 }
 
 .lead {
-	color: $light;
+	color: $lt-gray;
 	font-size: 200%;
 	font-weight: 200;
-	text-shadow: 0 0 20px #000, 0 0 5px #000;
+	@include text-shadow(0 0 20px #000, 0 0 20px #000, 0 0 20px #000);
 }
 
 .social {
 	font-size: 2em;
 	
 	a {
-		display: inline-block;
-		padding: .28em .15em .02em;
-		@include border-radius(100%);
-		@include text-shadow(0 -1px 1px $teal);
-		vertical-align: baseline;
-		color: $cyan;
-		background: $light;
+		@include inline-block;
+		vertical-align: top;
+		color: $og-cyan;
 		line-height: 1;
 		
 		&:hover {
-			color: $light-cyan;
+			color: $lt-cyan;
 		}
 		&:active {
-			color: $teal;
+			color: $dk-cyan;
 		}
 	}
 }
@@ -129,12 +120,18 @@ body {
 	@include border-radius(.3em);
 	padding: 1% 3%;
 	color: $white;
-	background: $cyan;
-	border: 1px solid $teal;
+	background: $og-cyan;
+	border: 1px solid $dk-cyan;
 	text-decoration: none;
 	
 	&.large {
 		font-size: 130%;
 		font-weight: 200;
+	}
+	&:hover {
+		background: $lt-cyan;
+	}
+	&:active {
+		background: $dk-cyan;
 	}
 }
