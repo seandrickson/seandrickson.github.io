@@ -9,6 +9,7 @@ $white:   #fff;
 $lt-gray: #eee;
 $og-gray: #999;
 $dk-gray: #444;
+$dd-gray: #333;
 $lt-cyan: #3cf;
 $og-cyan: #0af;
 $dk-cyan: #09c;
@@ -21,50 +22,64 @@ $dk-cyan: #09c;
 	@include box-sizing(border-box);
 }
 
-html,
-input,
-button,
-fieldset {
-	font: 300 100%/1.5 'source-sans-pro', sans-serif;
-	color: $dk-gray;
-}
 html {
+	font: 300 100%/1.5 'Open Sans', sans-serif;
+	color: $dk-gray;
 	background: $lt-gray;
 }
 
-html { // Vertical center component
-	display: table;
-	
-	&, body {
-		width: 100%;
-		height: 100%;
-	}
-	body {
-		display: table-cell;
-		vertical-align: middle;
-	}
+html,
+body,
+.wrapper,
+.opener-wrapper,
+.opener {
+	height: 100%;
 }
 
 body {
-	width: 100%;
+	overflow: auto;
 	overflow-y: scroll;
 	@include transition(1s);
-	background: #000 url(../img/sean_bg.jpg) no-repeat 50% 50%;
-	@include background-size(cover);
 }
 
 .wrapper {
+	max-width: 75em;
+	margin: 0 auto;
 	background: $white;
-	@include box-shadow(inset 1px 0 1px -1px #666, inset -1px 0 1px -1px #666);
+}
+
+.opener-wrapper { // Vertical center component
+	display: table;
+	width: 100%;
+	
+	.opener {
+		display: table-cell;
+		vertical-align: middle;
+		background: #000 url(../img/sean_bg.jpg) no-repeat 50% 50%;
+		@include background-size(cover);
+		text-align: center;
+	}
+}
+
+.white {
+	color: $dk-gray;
+	background: $white;
 }
 
 .black {
 	color: $lt-gray;
-	background: $dk-gray;
+	background: $dd-gray;
 }
 
 .row {
-	@include clearfix;
+	max-width: 1200px;
+	padding: 1% 0;
+	
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
 }
 
 .inline-list {
@@ -75,19 +90,22 @@ body {
 	}
 }
 
+.section {
+	border: 1px solid rgba(0,0,0,.3);
+	border-width: 0 1px;
+}
 
 .padding {
-	padding: 10% 25%;
+	padding: 5% 20%;
 }
 
 .logo {
-	max-width: 200px;
-	max-height: 200px;
-}
-
-.center {
-	margin: 0 auto;
-	text-align: center;
+	margin: 0;
+	
+	img {
+		max-width: 200px;
+		max-height: 200px;
+	}
 }
 
 .lead {
@@ -95,6 +113,7 @@ body {
 	font-size: 200%;
 	font-weight: 200;
 	@include text-shadow(0 0 20px #000, 0 0 20px #000, 0 0 20px #000);
+	margin: 0;
 }
 
 .social {
@@ -102,7 +121,6 @@ body {
 	
 	a {
 		@include inline-block;
-		vertical-align: top;
 		color: $og-cyan;
 		line-height: 1;
 		
@@ -111,6 +129,7 @@ body {
 		}
 		&:active {
 			color: $dk-cyan;
+			top: .1em;
 		}
 	}
 }
@@ -118,11 +137,12 @@ body {
 .btn {
 	@include inline-block;
 	@include border-radius(.3em);
-	padding: 1% 3%;
+	padding: 1.2% 3% 1%;
 	color: $white;
 	background: $og-cyan;
 	border: 1px solid $dk-cyan;
 	text-decoration: none;
+	vertical-align: top;
 	
 	&.large {
 		font-size: 130%;
