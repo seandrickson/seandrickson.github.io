@@ -5,16 +5,11 @@
 // VARIABLES
 //=====================================
 
-$white:   #fff;
-$black:   #000;
 $lt-gray: #eee;
-$og-gray: #999;
 $dk-gray: #444;
 $dd-gray: #333;
-$lt-cyan: #3cf;
 $og-cyan: #0af;
-$dk-cyan: #09c;
-$yellow: #ffa;
+$yellow:  #ffa;
 
 //
 // BASE
@@ -50,7 +45,7 @@ a {
 .wrapper {
 	max-width: 75em;
 	margin: 0 auto;
-	background: $white;
+	background: white;
 }
 
 .opener-wrapper { // Vertical center component
@@ -60,14 +55,14 @@ a {
 	.opener {
 		display: table-cell;
 		vertical-align: middle;
-		background: #000 url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
+		background: black url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
 		@include background-size(75%);
 	}
 }
 
 .white {
 	color: $dk-gray;
-	background: $white;
+	background: white;
 }
 
 .black {
@@ -202,7 +197,7 @@ a {
 		font-weight: 700;
 		letter-spacing: .1em;
 		text-indent: .1em;
-		color: $white;
+		color: white;
 		background: adjust-lightness($dd-gray, 10%);
 		@include border-radius(100%);
 	}
