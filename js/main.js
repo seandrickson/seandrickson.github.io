@@ -1,4 +1,0 @@
-// Load Behance
-$.ajax('',function(){
-
-});
