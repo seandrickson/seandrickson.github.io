@@ -8,8 +8,14 @@
 $lt-gray: #eee;
 $dk-gray: #444;
 $dd-gray: #333;
-$og-cyan: #0af;
+$blue:    #0af;
 $yellow:  #ffa;
+
+$slate:    #152B36;
+$cerulean: #0F6A99;
+$teal:     #00FFCC;
+$salmon:   #FF5740;
+$brick:    #990F1B;
 
 //
 // BASE
@@ -21,8 +27,8 @@ $yellow:  #ffa;
 
 html {
 	font: 300 100%/1.5 'Open Sans', sans-serif;
-	color: $dk-gray;
-	background: $lt-gray;
+	color: $slate;
+	background: white;
 }
 
 html,
@@ -42,21 +48,15 @@ a {
 	@include transition(.3s);
 }
 
-.wrapper {
-	max-width: 75em;
-	margin: 0 auto;
-	background: white;
-}
-
 .opener-wrapper { // Vertical center component
 	display: table;
 	width: 100%;
+	background: #000 url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
+	@include background-size(50%);
 	
 	.opener {
 		display: table-cell;
 		vertical-align: middle;
-		background: black url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
-		@include background-size(75%);
 	}
 }
 
@@ -72,7 +72,7 @@ a {
 
 .blue {
 	color: $dk-gray;
-	background: adjust-lightness($og-cyan, -30%);
+	background: adjust-lightness($blue, -30%);
 }
 
 .row {
@@ -109,11 +109,6 @@ a {
 }
 
 .section {
-	border: 1px solid rgba(black,.3);
-	border-width: 0 1px;
-}
-
-.padding {
 	padding: 5% 20%;
 }
 

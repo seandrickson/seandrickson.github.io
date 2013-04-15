@@ -1,4 +1,10 @@
 auto: true
 server: true
 baseurl: /
-exclude: .gitignore, README.md, config.rb, Procfile, Gemfile, Gemfile.lock, Guardfile
+exclude: [
+  README.md,
+  config.rb,
+  Procfile,
+  Gemfile,
+  Gemfile.lock,
+  Guardfile]
