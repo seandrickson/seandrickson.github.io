@@ -9,13 +9,25 @@ $lt-gray: #eee;
 $dk-gray: #444;
 $dd-gray: #333;
 $blue:    #0af;
-$yellow:  #ffa;
+$yellow:  #ff9;
 
 $slate:    #152B36;
 $cerulean: #0F6A99;
 $teal:     #00FFCC;
 $salmon:   #FF5740;
 $brick:    #990F1B;
+
+$v-ratio: 14.4%; // 1400/202
+
+@mixin v-background($v-color: 'white'){
+	padding-bottom: $v-ratio;
+	background: {
+		image: url(../img/v_#{$v-color}.svg);
+		repeat: no-repeat;
+		position: 50% 100%;
+	}
+	@include background-size(cover);
+}
 
 //
 // BASE
@@ -48,31 +60,43 @@ a {
 	@include transition(.3s);
 }
 
-.opener-wrapper { // Vertical center component
-	display: table;
-	width: 100%;
-	background: #000 url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
-	@include background-size(50%);
+.section {
+	position: relative;
+	padding: 5% 20%;
 	
-	.opener {
-		display: table-cell;
-		vertical-align: middle;
+	&.opener-wrapper {
+		display: table;
+		width: 100%;
+		padding: 0;
+		background: #000 url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
+		@include background-size(50%);
+	
+		.opener {
+			display: table-cell;
+			vertical-align: middle;
+			padding-top: $v-ratio;
+			@include v-background('brick');		
+		}		
 	}
-}
 
-.white {
-	color: $dk-gray;
-	background: white;
-}
+	&#about {
+		color: $salmon;
+		padding-bottom: 14.5%;
+		background-color: $brick;
+		@include v-background('slate');
+	}
 
-.black {
-	color: $lt-gray;
-	background: $dd-gray;
-}
+	&#portfolio {
+		color: $cerulean;
+		padding-bottom: 14.5%;
+		background-color: $slate;
+		@include v-background('black');
+	}
 
-.blue {
-	color: $dk-gray;
-	background: adjust-lightness($blue, -30%);
+	&#footer {
+		color: $slate;
+		background: black;
+	}
 }
 
 .row {
@@ -108,10 +132,6 @@ a {
 	}
 }
 
-.section {
-	padding: 5% 20%;
-}
-
 .logo {
 	margin: 0;
 	
@@ -122,7 +142,7 @@ a {
 }
 
 .lead {
-	color: $lt-gray;
+	color: $teal;
 	font-size: 200%;
 	font-weight: 200;
 	@include text-shadow(0 0 20px #000, 0 0 20px #000, 0 0 20px #000);
@@ -135,17 +155,17 @@ a {
 	a {
 		position: relative;
 		@include inline-block;
-		color: black;
+		color: $cerulean;
 		line-height: 1;
 		opacity: .5;
 		
 		&:hover,
 		&:focus {
-			color: adjust-lightness($yellow, 15%);
+			color: $teal;
 			opacity: 1;
 		}
 		&:active {
-			color: adjust-lightness($yellow, -15%);
+			color: $slate;
 			top: .1em;
 			opacity: 1;
 		}
@@ -192,8 +212,8 @@ a {
 		font-weight: 700;
 		letter-spacing: .1em;
 		text-indent: .1em;
-		color: white;
-		background: adjust-lightness($dd-gray, 10%);
+		color: $brick;
+		background: $salmon;
 		@include border-radius(100%);
 	}
 }
