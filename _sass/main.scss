@@ -1,6 +1,12 @@
 @import "compass";
 @import "normalize";
 
+/*!
+|
+|	main.scss
+|
+*/
+
 //
 // VARIABLES
 //=====================================
@@ -26,7 +32,7 @@ $v-ratio: 14.4%; // 1400/202
 		repeat: no-repeat;
 		position: 50% 100%;
 	}
-	@include background-size(cover);
+	@include background-size(100% auto);
 }
 
 //
@@ -36,6 +42,9 @@ $v-ratio: 14.4%; // 1400/202
 *, *:before, *:after { // Box sizing component
 	@include box-sizing(border-box);
 }
+
+::-moz-selection {color: $slate; background: $teal; text-shadow: none}
+     ::selection {color: $slate; background: $teal; text-shadow: none}
 
 html {
 	font: 300 100%/1.5 'Open Sans', sans-serif;
@@ -75,32 +84,37 @@ a {
 			display: table-cell;
 			vertical-align: middle;
 			padding-top: $v-ratio;
-			@include v-background('brick');		
+			@include v-background('brick');
+			background-attachment: fixed;
 		}		
 	}
 
 	&#about {
 		color: $salmon;
-		padding-bottom: 14.5%;
 		background-color: $brick;
-		@include v-background('slate');
 	}
 
 	&#portfolio {
 		color: $cerulean;
-		padding-bottom: 14.5%;
 		background-color: $slate;
-		@include v-background('black');
 	}
 
 	&#footer {
 		color: $slate;
-		background: black;
+		padding-bottom: $v-ratio;
+		background: {
+			color: black;
+			image: url(../img/a_white.svg);
+			repeat: no-repeat;
+			position: 50% 100%;
+		}
+		@include background-size(100% auto);
 	}
 }
 
 .row {
 	max-width: 1200px;
+	margin: 0 auto;
 	padding: 1% 0;
 	
 	&.center {
