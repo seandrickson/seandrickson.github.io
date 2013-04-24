@@ -1,10 +1,11 @@
 auto: true
 server: true
-baseurl: /
-exclude: [
-  README.md,
-  config.rb,
-  Procfile,
-  Gemfile,
-  Gemfile.lock,
-  Guardfile]
+sass:
+  syntax: scss        # scss|sass
+  style:  compressed  # nested|expanded|compact|compressed
+exclude:
+  - README.md
+  - config.rb
+  - Procfile
+  - Gemfile*
+  - Guardfile

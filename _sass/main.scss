@@ -1,4 +1,5 @@
-@import "compass";
+@import "bourbon/bourbon";
+@import "neat/neat";
 @import "normalize";
 
 /*!
@@ -6,6 +7,7 @@
 |	main.scss
 |
 */
+
 
 //
 // VARIABLES
@@ -31,120 +33,63 @@ $v-ratio: 14.4%; // 1400/202
 		image: url(../img/v_#{$v-color}.svg);
 		repeat: no-repeat;
 		position: 50% 100%;
+		size: 100%;
 	}
-	@include background-size(100% auto);
 }
+
 
 //
 // BASE
 //=====================================
 
-*, *:before, *:after { // Box sizing component
-	@include box-sizing(border-box);
+* { // Box sizing component
+	&:before, &:after {
+		@include box-sizing(border-box);	
+	}
 }
 
+
+// Selection Styles
 ::-moz-selection {color: $slate; background: $teal; text-shadow: none}
      ::selection {color: $slate; background: $teal; text-shadow: none}
 
-html {
+
+html { // Defaults
 	font: 300 100%/1.5 'Open Sans', sans-serif;
 	color: $slate;
-	background: white;
+	background: #eee;
 }
 
-html,
-body,
-.wrapper,
-.opener-wrapper,
-.opener {
-	height: 100%;
-}
-
-body {
-	overflow: auto;
-	overflow-y: scroll;
-}
 
 a {
 	@include transition(.3s);
 }
 
-.section {
-	position: relative;
-	padding: 5% 20%;
-	
-	&.opener-wrapper {
-		display: table;
-		width: 100%;
-		padding: 0;
-		background: #000 url(../img/LA_Skyline_Header.jpg) repeat-x fixed 50% 50%;
-		@include background-size(50%);
-	
-		.opener {
-			display: table-cell;
-			vertical-align: middle;
-			padding-top: $v-ratio;
-			@include v-background('brick');
-			background-attachment: fixed;
-		}		
-	}
 
-	&#about {
-		color: $salmon;
-		background-color: $brick;
-	}
-
-	&#portfolio {
-		color: $cerulean;
-		background-color: $slate;
-	}
-
-	&#footer {
-		color: $slate;
-		padding-bottom: $v-ratio;
-		background: {
-			color: black;
-			image: url(../img/a_white.svg);
-			repeat: no-repeat;
-			position: 50% 100%;
-		}
-		@include background-size(100% auto);
-	}
-}
-
-.row {
-	max-width: 1200px;
-	margin: 0 auto;
+.row { // Grid system
+	@include outer-container;
+	//max-width: 1000px;
 	padding: 1% 0;
-	
+
 	&.center {
 		text-align: center;
 	}
-	
-	&:after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-	
-	&.grid {	
-		margin-left: -3%;
-
-		.one-third {
-			display: inline-block;
-			padding-left: 3%;
-			width: 33.33333%;
-		}
-	}
 }
 
-.inline-list {
-	@include inline-block-list;
+
+.inline-list { // Inline list component
+	display: block;
+	margin: 0;
+	padding: 0;
+	list-style: none;
 	
 	li {
+		@include inline-block;
+		margin: 0;
 		padding: 1%;
 	}
 }
+
 
 .logo {
 	margin: 0;
@@ -155,13 +100,15 @@ a {
 	}
 }
 
+
 .lead {
 	color: $teal;
 	font-size: 200%;
 	font-weight: 200;
-	@include text-shadow(0 0 20px #000, 0 0 20px #000, 0 0 20px #000);
+	text-shadow: 0 0 20px #000;
 	margin: 0;
 }
+
 
 .social {
 	font-size: 1.7em;
@@ -186,31 +133,17 @@ a {
 	}
 }
 
+
 .btn {
-	@include inline-block;
-	@include border-radius(.3em);
-	@include box-shadow(0 1px 2px rgba(black,.5));
-	padding: 0 1.5em;
-	line-height: 3;
-	color: $dd-gray;
-	background: $yellow;
-	border: 1px solid rgba(black,.3);
-	text-decoration: none;
-	vertical-align: middle;
-	
-	&.large {
-		font-size: 130%;
-		font-weight: 200;
-	}
-	&:hover,
-	&:focus {
-		background: adjust-lightness($yellow, 15%);
-		@include box-shadow(inset 0 1px 2px rgba(white,.3), inset 0 -1px 2px rgba(black,.3));
-	}
-	&:active {
-		background: adjust-lightness($yellow, -15%);
+	@include button($yellow);
+	padding: 0 1em;
+	line-height: 2.5;
+	font: {
+		size: 180%;
+		weight: 300;
 	}
 }
+
 
 .circle-center {
 	display: table;
@@ -220,14 +153,98 @@ a {
 		display: table-cell;
 		width: 2em;
 		height: 2em;
-		vertical-align: middle;
-		text-align: center;
-		font-size: 3em;
-		font-weight: 700;
-		letter-spacing: .1em;
-		text-indent: .1em;
+		border-radius: 100%;
 		color: $brick;
 		background: $salmon;
-		@include border-radius(100%);
+		vertical-align: middle;
+		font: {
+			size: 3em;
+			weight: 700;
+		}
+		text: {
+			align: center;
+			indent: .1em;
+		}
+		letter-spacing: .1em;
+	}
+}
+
+
+//
+// SECTIONS
+//=====================================
+
+%fold { // Fold items height: 100%
+	height: 100%;
+}
+
+.section {
+	@include outer-container;
+	max-width: 2000px;
+	position: relative;
+	padding: 5% 20%;
+}
+
+html {
+	@extend %fold;
+	
+	body {
+		@extend %fold;
+		
+		.fold-wrapper {
+			display: table;
+			width: 100%;
+			@extend %fold;
+			padding: 0;
+			background: {
+				color: #000;
+				image: url(../img/ChristmasSunset.jpg);
+				repeat: no-repeat;
+				position: 50% 50%;
+				size: cover;
+			}
+
+			.fold-row {
+				display: table-row;
+		
+				.fold-item {
+					display: table-cell;
+					vertical-align: middle;
+			
+					&.first {
+						@extend %fold;
+						@include v-background('white');
+						padding-top: $v-ratio;
+					}
+				}
+			}
+		}		
+	}
+}
+
+#directive {
+	color: $dk-gray;
+	background-color: white;
+}
+
+#about {
+	color: $salmon;
+	background-color: $brick;
+}
+
+#portfolio {
+	color: $cerulean;
+	background-color: $slate;
+}
+
+#footer {
+	color: $slate;
+	padding-bottom: $v-ratio;
+	background: {
+		color: black;
+		image: url(../img/a_white.svg);
+		repeat: no-repeat;
+		position: 50% 100%;
+		size: 100%;
 	}
 }
