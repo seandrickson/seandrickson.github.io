@@ -19,23 +19,14 @@ $dd-gray: #333;
 $blue:    #0af;
 $yellow:  #ff9;
 
-$slate:    #152B36;
+$slate:    #114154;
 $cerulean: #0F6A99;
-$teal:     #00FFCC;
+$teal:     #d9ff00;
 $salmon:   #FF5740;
 $brick:    #990F1B;
 
 $v-ratio: 14.4%; // 1400/202
-
-@mixin v-background($v-color: 'white'){
-	padding-bottom: $v-ratio;
-	background: {
-		image: url(../img/v_#{$v-color}.svg);
-		repeat: no-repeat;
-		position: 50% 100%;
-		size: 100%;
-	}
-}
+$visual-grid: true; // Display the base grid
 
 
 //
@@ -68,11 +59,13 @@ a {
 
 .row { // Grid system
 	@include outer-container;
-	//max-width: 1000px;
-	padding: 1% 0;
+	padding: 5%;
 
 	&.center {
 		text-align: center;
+	}
+	.one-third {
+		@include span-columns(4,table);
 	}
 }
 
@@ -118,17 +111,14 @@ a {
 		@include inline-block;
 		color: $cerulean;
 		line-height: 1;
-		opacity: .5;
 		
 		&:hover,
 		&:focus {
 			color: $teal;
-			opacity: 1;
 		}
 		&:active {
 			color: $slate;
 			top: .1em;
-			opacity: 1;
 		}
 	}
 }
@@ -178,13 +168,6 @@ a {
 	height: 100%;
 }
 
-.section {
-	@include outer-container;
-	max-width: 2000px;
-	position: relative;
-	padding: 5% 20%;
-}
-
 html {
 	@extend %fold;
 	
@@ -193,8 +176,8 @@ html {
 		
 		.fold-wrapper {
 			display: table;
-			width: 100%;
 			@extend %fold;
+			margin: 0 auto;
 			padding: 0;
 			background: {
 				color: #000;
@@ -206,6 +189,15 @@ html {
 
 			.fold-row {
 				display: table-row;
+				
+				&.first {
+					background: {
+						image: url(../img/t_white.svg);
+						repeat: no-repeat;
+						position: 50% 0;
+						size: 110%;
+					}
+				}
 		
 				.fold-item {
 					display: table-cell;
@@ -213,8 +205,14 @@ html {
 			
 					&.first {
 						@extend %fold;
-						@include v-background('white');
 						padding-top: $v-ratio;
+						padding-bottom: $v-ratio;
+						background: {
+							image: url(../img/u_white.svg);
+							repeat: no-repeat;
+							position: 50% 100%;
+							size: 110%;
+						}
 					}
 				}
 			}
@@ -238,13 +236,12 @@ html {
 }
 
 #footer {
-	color: $slate;
-	padding-bottom: $v-ratio;
+	color: $cerulean;
+	padding-top: $v-ratio;
 	background: {
-		color: black;
-		image: url(../img/a_white.svg);
+		image: url(../img/v_slate.svg);
 		repeat: no-repeat;
-		position: 50% 100%;
+		position: 50% 0;
 		size: 100%;
 	}
 }
