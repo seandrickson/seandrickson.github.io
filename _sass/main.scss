@@ -26,7 +26,6 @@ $salmon:   #FF5740;
 $brick:    #990F1B;
 
 $v-ratio: 14.4%; // 1400/202
-$visual-grid: true; // Display the base grid
 
 
 //
@@ -35,7 +34,7 @@ $visual-grid: true; // Display the base grid
 
 * { // Box sizing component
 	&:before, &:after {
-		@include box-sizing(border-box);	
+		@include box-sizing(border-box);
 	}
 }
 
@@ -56,7 +55,6 @@ a {
 	@include transition(.3s);
 }
 
-
 .row { // Grid system
 	@include outer-container;
 	padding: 5%;
@@ -75,7 +73,7 @@ a {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-	
+
 	li {
 		@include inline-block;
 		margin: 0;
@@ -86,7 +84,7 @@ a {
 
 .logo {
 	margin: 0;
-	
+
 	img {
 		max-width: 200px;
 		max-height: 200px;
@@ -105,13 +103,13 @@ a {
 
 .social {
 	font-size: 1.7em;
-	
+
 	a {
 		position: relative;
 		@include inline-block;
 		color: $cerulean;
 		line-height: 1;
-		
+
 		&:hover,
 		&:focus {
 			color: $teal;
@@ -169,16 +167,23 @@ a {
 }
 
 html {
+	width: 100%;
 	@extend %fold;
-	
+
 	body {
+		width: 100%;
 		@extend %fold;
-		
+
+		.container {
+			@extend %fold;
+			@include outer-container;
+			margin: 0 auto;
+		}
+
 		.fold-wrapper {
 			display: table;
+			width: 100%;
 			@extend %fold;
-			margin: 0 auto;
-			padding: 0;
 			background: {
 				color: #000;
 				image: url(../img/ChristmasSunset.jpg);
@@ -187,36 +192,17 @@ html {
 				size: cover;
 			}
 
-			.fold-row {
-				display: table-row;
-				
-				&.first {
-					background: {
-						image: url(../img/t_white.svg);
-						repeat: no-repeat;
-						position: 50% 0;
-						size: 110%;
-					}
-				}
-		
-				.fold-item {
-					display: table-cell;
-					vertical-align: middle;
-			
-					&.first {
-						@extend %fold;
-						padding-top: $v-ratio;
-						padding-bottom: $v-ratio;
-						background: {
-							image: url(../img/u_white.svg);
-							repeat: no-repeat;
-							position: 50% 100%;
-							size: 110%;
-						}
-					}
-				}
+			.fold-item {
+				display: table-cell;
+				vertical-align: middle;
+				@extend %fold;
+				padding-top: $v-ratio;
+				padding-bottom: $v-ratio;
+				background: url(../img/t_white.svg) no-repeat 50% 0%,
+						url(../img/u_white.svg) no-repeat 50% 100%;
+				background-size: 110%;
 			}
-		}		
+		}
 	}
 }
 
