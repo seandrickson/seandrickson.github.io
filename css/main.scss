@@ -13,11 +13,14 @@
 // VARIABLES
 //=====================================
 
-$lt-gray: #eee;
-$dk-gray: #444;
-$dd-gray: #333;
+$black: #170515;
+
+$lt-gray: #e7eff6;
+$md-gray: #b2b9bb;
+$dk-gray: #44494c;
+$dd-gray: #3a3e41;
 $blue:    #0af;
-$yellow:  #ff9;
+$yellow:  #eac76b;
 
 $slate:    #114154;
 $cerulean: #0F6A99;
@@ -27,15 +30,16 @@ $brick:    #990F1B;
 
 $v-ratio: 14.4%; // 1400/202
 
+$sm-size: 480px;
+$md-size: 800px;
+$lg-size: 1200px;
 
 //
 // BASE
 //=====================================
 
 * { // Box sizing component
-	&:before, &:after {
-		@include box-sizing(border-box);
-	}
+	@include box-sizing(border-box);
 }
 
 
@@ -46,12 +50,22 @@ $v-ratio: 14.4%; // 1400/202
 
 html { // Defaults
 	font: 300 100%/1.5 'Open Sans', sans-serif;
-	color: $slate;
-	background: #eee;
+	color: $dk-gray;
+	background: $md-gray;
 }
 
+h1,h2,h3,h4,h5,h6 {
+	margin-top: 0;
+}
 
-a {
+h1 { font-size: 200% }
+h2 { font-size: 180% }
+h3 { font-size: 160% }
+h4 { font-size: 140% }
+h5 { font-size: 120% }
+h6 { font-size: 100% }
+
+a { // Fancy links
 	@include transition(.3s);
 }
 
@@ -62,8 +76,16 @@ a {
 	&.center {
 		text-align: center;
 	}
+	&.short {
+		padding: 2%;
+	}
 	.one-third {
-		@include span-columns(4,table);
+		padding-bottom: 3em;
+
+		@include media($md-size) {
+			@include span-columns(4);
+			padding-bottom: 0;
+		}
 	}
 }
 
@@ -86,14 +108,14 @@ a {
 	margin: 0;
 
 	img {
-		max-width: 200px;
-		max-height: 200px;
+		max-width:  7em;
+		max-height: 7em;
 	}
 }
 
 
 .lead {
-	color: $teal;
+	color: white;
 	font-size: 200%;
 	font-weight: 200;
 	text-shadow: 0 0 20px #000;
@@ -107,15 +129,15 @@ a {
 	a {
 		position: relative;
 		@include inline-block;
-		color: $cerulean;
+		color: $dk-gray;
 		line-height: 1;
+		opacity: .3;
 
 		&:hover,
 		&:focus {
-			color: $teal;
+			opacity: 1;
 		}
 		&:active {
-			color: $slate;
 			top: .1em;
 		}
 	}
@@ -123,27 +145,55 @@ a {
 
 
 .btn {
-	@include button($yellow);
+	position: relative;
+	display: inline-block;
+	border: 1px solid rgba(black,.2);
+	border-radius: .3em;
 	padding: 0 1em;
 	line-height: 2.5;
+	box-shadow: inset 0 1px 1px 0 rgba(white,.3), 0 2px 3px -1px rgba(black,.3);
+	background-color: $yellow;
+	@include background-image( linear-gradient( rgba(white,.1), rgba(black,.1) ) );
+	color: $dk-gray;
 	font: {
 		size: 180%;
 		weight: 300;
+	}
+	text-shadow: 0 1px 1px rgba(white,.2);
+	text-decoration: none;
+
+	&:hover,
+	&:focus {
+		text-decoration: none;
+		color: tint($dk-gray, 10%);
+		background-color: tint($yellow, 25%);
+	}
+	&:active {
+		top: .2em;
+		color: shade($dk-gray, 25%);
+		box-shadow: inset 0 5px 5px 0 rgba(black,.5);
+		background-color: shade($yellow, 25%);
 	}
 }
 
 
 .circle-center {
 	display: table;
-	margin: 0 auto;
+	float: left;
+	margin-right: 1em;
+
+	@include media($md-size) {
+		float: none;
+		margin: 0 auto .5em;
+	}
 
 	.circle-icon {
 		display: table-cell;
 		width: 2em;
 		height: 2em;
 		border-radius: 100%;
-		color: $brick;
-		background: $salmon;
+		color: $lt-gray;
+		background: $dk-gray;
 		vertical-align: middle;
 		font: {
 			size: 3em;
@@ -156,7 +206,19 @@ a {
 		letter-spacing: .1em;
 	}
 }
+.icon-body {
+	overflow: hidden;
+	text-align: left;
 
+	@include media($md-size) {
+		margin: 0 auto;
+		overflow: visible;
+		text-align: inherit;
+	}
+	.icon-head {
+		margin: 0 0 .5em;
+	}
+}
 
 //
 // SECTIONS
@@ -209,25 +271,39 @@ html {
 #directive {
 	color: $dk-gray;
 	background-color: white;
+	@include background-image( linear-gradient( transparent, rgba(black,.1) ) );
 }
 
 #about {
-	color: $salmon;
-	background-color: $brick;
+	color: $dk-gray;
+	background-color: $yellow;
+	@include background-image( linear-gradient( rgba(white,.1), transparent ) );
 }
 
 #portfolio {
-	color: $cerulean;
-	background-color: $slate;
+	color: $lt-gray;
+	background-color: $dk-gray;
+	@include background-image( linear-gradient( rgba(white,.1), transparent ) );
 }
 
-#footer {
-	color: $cerulean;
-	padding-top: $v-ratio;
+#calltoaction {
+	color: $dk-gray;
+	padding-top: $v-ratio + 5%;
 	background: {
-		image: url(../img/v_slate.svg);
 		repeat: no-repeat;
 		position: 50% 0;
 		size: 100%;
+		image: url(../img/v_gray.svg);
+	}
+}
+
+#footer {
+	font-size: 90%;
+	color: $md-gray;
+	background: {
+		repeat: no-repeat;
+		position: 50% 0;
+		size: 100%;
+		image: url(../img/a_gray.svg);
 	}
 }

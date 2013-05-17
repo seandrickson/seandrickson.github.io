@@ -1,5 +1,7 @@
+timezone: America/Los_Angeles
+exclude:
+  - README.md
+  - Gemfile*
 sass:
   syntax: scss        # scss|sass
   style:  compressed  # nested|expanded|compact|compressed
-exclude: [ "README.md", "codekit-config.json" ]
-timezone: America/Los_Angeles
