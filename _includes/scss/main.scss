@@ -1,32 +1,20 @@
 @import "bourbon/bourbon";
 @import "neat/neat";
 @import "normalize";
+@import "ss-social-circle";
 
-/*!
-|
-|	main.scss
-|
+/*! == main.scss ==
 */
-
 
 //
 // VARIABLES
 //=====================================
 
-$black: #170515;
 
 $lt-gray: #e7eff6;
 $md-gray: #b2b9bb;
 $dk-gray: #44494c;
-$dd-gray: #3a3e41;
-$blue:    #0af;
 $yellow:  #eac76b;
-
-$slate:    #114154;
-$cerulean: #0F6A99;
-$teal:     #d9ff00;
-$salmon:   #FF5740;
-$brick:    #990F1B;
 
 $v-ratio: 14.4%; // 1400/202
 
@@ -44,8 +32,8 @@ $lg-size: 1200px;
 
 
 // Selection Styles
-::-moz-selection {color: $slate; background: $teal; text-shadow: none}
-     ::selection {color: $slate; background: $teal; text-shadow: none}
+::-moz-selection {color: $dk-gray; background-color: $yellow; text-shadow: none}
+     ::selection {color: $dk-gray; background-color: $yellow; text-shadow: none}
 
 
 html { // Defaults
@@ -58,12 +46,12 @@ h1,h2,h3,h4,h5,h6 {
 	margin-top: 0;
 }
 
-h1 { font-size: 200% }
-h2 { font-size: 180% }
-h3 { font-size: 160% }
-h4 { font-size: 140% }
-h5 { font-size: 120% }
-h6 { font-size: 100% }
+h1 { font-size: 2.0em }
+h2 { font-size: 1.8em }
+h3 { font-size: 1.6em }
+h4 { font-size: 1.4em }
+h5 { font-size: 1.2em }
+h6 { font-size: 1.0em }
 
 a { // Fancy links
 	@include transition(.3s);
@@ -116,8 +104,10 @@ a { // Fancy links
 
 .lead {
 	color: white;
-	font-size: 200%;
-	font-weight: 200;
+	font: {
+		size: 200%;
+		weight: 200;
+	}
 	text-shadow: 0 0 20px #000;
 	margin: 0;
 }
@@ -151,9 +141,13 @@ a { // Fancy links
 	border-radius: .3em;
 	padding: 0 1em;
 	line-height: 2.5;
-	box-shadow: inset 0 1px 1px 0 rgba(white,.3), 0 2px 3px -1px rgba(black,.3);
+	box-shadow:
+		inset 0 1px 1px  0   rgba(white,.3),
+		      0 2px 3px -1px rgba(black,.3);
 	background-color: $yellow;
-	@include background-image( linear-gradient( rgba(white,.1), rgba(black,.1) ) );
+	@include background-image(
+		linear-gradient( rgba(white,.1), rgba(black,.1) )
+	);
 	color: $dk-gray;
 	font: {
 		size: 180%;
@@ -193,7 +187,7 @@ a { // Fancy links
 		height: 2em;
 		border-radius: 100%;
 		color: $lt-gray;
-		background: $dk-gray;
+		background-color: $dk-gray;
 		vertical-align: middle;
 		font: {
 			size: 3em;
@@ -246,13 +240,8 @@ html {
 			display: table;
 			width: 100%;
 			@extend %fold;
-			background: {
-				color: #000;
-				image: url(../img/ChristmasSunset.jpg);
-				repeat: no-repeat;
-				position: 50% 50%;
-				size: cover;
-			}
+			background: #000 url(img/ChristmasSunset.jpg) no-repeat 50% 50%;
+			background-size: cover;
 
 			.fold-item {
 				display: table-cell;
@@ -260,8 +249,9 @@ html {
 				@extend %fold;
 				padding-top: $v-ratio;
 				padding-bottom: $v-ratio;
-				background: url(../img/t_white.svg) no-repeat 50% 0%,
-						url(../img/u_white.svg) no-repeat 50% 100%;
+				background:
+					url(img/t_white.svg) no-repeat 50% 0%,
+					url(img/u_white.svg) no-repeat 50% 100%;
 				background-size: 110%;
 			}
 		}
@@ -271,39 +261,35 @@ html {
 #directive {
 	color: $dk-gray;
 	background-color: white;
-	@include background-image( linear-gradient( transparent, rgba(black,.1) ) );
+	@include background-image(
+		linear-gradient( transparent, rgba(black,.1) )
+	);
 }
 
 #about {
 	color: $dk-gray;
 	background-color: $yellow;
-	@include background-image( linear-gradient( rgba(white,.1), transparent ) );
+	@include background-image(
+	  linear-gradient( rgba(white,.1), transparent )
+	);
 }
 
 #portfolio {
+	padding-bottom: $v-ratio;
 	color: $lt-gray;
-	background-color: $dk-gray;
-	@include background-image( linear-gradient( rgba(white,.1), transparent ) );
+	background: $dk-gray no-repeat 50% 100%;
+	background-size: 110%;
+	@include background-image(
+	  url(img/u_gray.svg),
+	  linear-gradient( rgba(white,.1), transparent )
+	);
 }
 
 #calltoaction {
 	color: $dk-gray;
-	padding-top: $v-ratio + 5%;
-	background: {
-		repeat: no-repeat;
-		position: 50% 0;
-		size: 100%;
-		image: url(../img/v_gray.svg);
-	}
 }
 
 #footer {
 	font-size: 90%;
-	color: $md-gray;
-	background: {
-		repeat: no-repeat;
-		position: 50% 0;
-		size: 100%;
-		image: url(../img/a_gray.svg);
-	}
+	color: $lt-gray;
 }
