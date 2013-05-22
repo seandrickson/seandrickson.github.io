@@ -754,18 +754,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/_includes\/scss\/neat\/settings\/_grid.scss" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/scss\/neat\/settings\/_grid.scss",
-      "outputStyle" : 3,
-      "shouldRunBless" : 1,
-      "outputAbbreviatedPath" : "\/_includes\/scss\/neat\/css\/_grid.css",
-      "fileType" : 4,
-      "debugStyle" : 0
-    },
     "\/_includes\/scss\/bourbon\/functions\/_modular-scale.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -775,6 +763,18 @@
       "outputStyle" : 3,
       "shouldRunBless" : 1,
       "outputAbbreviatedPath" : "\/_includes\/scss\/bourbon\/css\/_modular-scale.css",
+      "fileType" : 4,
+      "debugStyle" : 0
+    },
+    "\/_includes\/scss\/neat\/settings\/_grid.scss" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_includes\/scss\/neat\/settings\/_grid.scss",
+      "outputStyle" : 3,
+      "shouldRunBless" : 1,
+      "outputAbbreviatedPath" : "\/_includes\/scss\/neat\/css\/_grid.css",
       "fileType" : 4,
       "debugStyle" : 0
     },
