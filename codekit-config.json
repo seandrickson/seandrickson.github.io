@@ -44,19 +44,19 @@
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_includes\/js\/main.js",
       "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
+      "syntaxCheckerStyle" : 0,
       "outputAbbreviatedPath" : "\/_includes\/js\/main.min.js",
       "fileType" : 64
     },
-    "\/_includes\/js\/vendor\/selectivizr.js" : {
+    "\/_includes\/js\/vendor\/respond-1.1.0.min.js" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/js\/vendor\/selectivizr.js",
+      "inputAbbreviatedPath" : "\/_includes\/js\/vendor\/respond-1.1.0.min.js",
       "outputStyle" : 1,
       "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/_includes\/js\/vendor\/selectivizr.min.js",
+      "outputAbbreviatedPath" : "\/_includes\/js\/vendor\/respond-1.1.0.min.min.js",
       "fileType" : 64
     },
     "\/_includes\/scss\/bourbon\/css3\/_border-image.scss" : {
@@ -176,6 +176,17 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/_includes\/js\/main.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_includes\/js\/main.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_includes\/js\/main.min.min.js",
+      "fileType" : 64
+    },
     "\/_site\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -184,6 +195,17 @@
       "inputAbbreviatedPath" : "\/_site\/index.html",
       "outputAbbreviatedPath" : "No Output Path",
       "fileType" : 2048
+    },
+    "\/_includes\/js\/vendor\/selectivizr-1.0.2.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_includes\/js\/vendor\/selectivizr-1.0.2.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_includes\/js\/vendor\/selectivizr-1.0.2.min.min.js",
+      "fileType" : 64
     },
     "\/_includes\/scss\/neat\/grid\/_to-deprecate.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -234,8 +256,8 @@
       "debugStyle" : 0
     },
     "\/_site\/fonts\/ss-social.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
+      "ignoreWasSetByUser" : 1,
+      "ignore" : 1,
       "hidden" : 0,
       "outputPathIsSetByUser" : 0,
       "inputAbbreviatedPath" : "\/_site\/fonts\/ss-social.js",
@@ -267,17 +289,6 @@
       "outputAbbreviatedPath" : "\/_includes\/scss\/bourbon\/css\/_columns.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/_includes\/js\/vendor\/respond.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/js\/vendor\/respond.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/_includes\/js\/vendor\/respond.min.js",
-      "fileType" : 64
     },
     "\/_includes\/scss\/bourbon\/css3\/_transform.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -494,17 +505,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/_includes\/js\/main-ck.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/js\/main-ck.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/_includes\/js\/main-ck.min.js",
-      "fileType" : 64
-    },
     "\/index.html" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 0,
@@ -645,17 +645,6 @@
       "outputAbbreviatedPath" : "\/_includes\/scss\/neat\/css\/_grid.css",
       "fileType" : 4,
       "debugStyle" : 0
-    },
-    "\/_includes\/js\/vendor\/jquery.js" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 1,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_includes\/js\/vendor\/jquery.js",
-      "outputStyle" : 1,
-      "syntaxCheckerStyle" : 1,
-      "outputAbbreviatedPath" : "\/_includes\/js\/vendor\/jquery.min.js",
-      "fileType" : 64
     },
     "\/_includes\/scss\/bourbon\/helpers\/_shape-size-stripper.scss" : {
       "ignoreWasSetByUser" : 0,
@@ -837,15 +826,6 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
-    "\/_layouts\/default.html" : {
-      "ignoreWasSetByUser" : 0,
-      "ignore" : 0,
-      "hidden" : 0,
-      "outputPathIsSetByUser" : 0,
-      "inputAbbreviatedPath" : "\/_layouts\/default.html",
-      "outputAbbreviatedPath" : "No Output Path",
-      "fileType" : 2048
-    },
     "\/_includes\/scss\/neat\/functions\/_private.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -858,6 +838,15 @@
       "fileType" : 4,
       "debugStyle" : 0
     },
+    "\/_layouts\/default.html" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 0,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_layouts\/default.html",
+      "outputAbbreviatedPath" : "No Output Path",
+      "fileType" : 2048
+    },
     "\/_includes\/scss\/bourbon\/helpers\/_radial-arg-parser.scss" : {
       "ignoreWasSetByUser" : 0,
       "ignore" : 1,
@@ -869,6 +858,17 @@
       "outputAbbreviatedPath" : "\/_includes\/scss\/bourbon\/css\/_radial-arg-parser.css",
       "fileType" : 4,
       "debugStyle" : 0
+    },
+    "\/_includes\/js\/vendor\/jquery-1.9.1.min.js" : {
+      "ignoreWasSetByUser" : 0,
+      "ignore" : 1,
+      "hidden" : 0,
+      "outputPathIsSetByUser" : 0,
+      "inputAbbreviatedPath" : "\/_includes\/js\/vendor\/jquery-1.9.1.min.js",
+      "outputStyle" : 1,
+      "syntaxCheckerStyle" : 1,
+      "outputAbbreviatedPath" : "\/_includes\/js\/vendor\/jquery-1.9.1.min.min.js",
+      "fileType" : 64
     },
     "\/_includes\/scss\/bourbon\/addons\/_size.scss" : {
       "ignoreWasSetByUser" : 0,

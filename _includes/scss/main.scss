@@ -58,22 +58,44 @@ a { // Fancy links
 }
 
 .row { // Grid system
-	@include outer-container;
-	padding: 5%;
+	@include row();
+	@include pad(5%);
 
 	&.center {
 		text-align: center;
 	}
 	&.short {
-		padding: 2%;
+		@include pad(2%);
 	}
 	.one-third {
-		padding-bottom: 3em;
+		@include pad(0 0 3em);
 
 		@include media($md-size) {
 			@include span-columns(4);
-			padding-bottom: 0;
+			@include pad(0);
 		}
+	}
+	.one-fourth {
+		margin-bottom: 2em;
+
+		@include media($sm-size) {
+			width: 50%;
+			float: left;
+		}
+		@include media($md-size) {
+			width: 25%;
+			float: left;
+		}
+	}
+}
+
+.project {
+	
+	.project-photo {
+		max-width: 100%;
+		height: auto;
+		margin: 0 auto;
+		vertical-align: top;
 	}
 }
 
@@ -275,7 +297,7 @@ html {
 }
 
 #portfolio {
-	padding-bottom: $v-ratio;
+	padding-bottom: $v-ratio + 5%;
 	color: $lt-gray;
 	background: $dk-gray no-repeat 50% 100%;
 	background-size: 110%;
