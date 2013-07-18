@@ -1,5 +1,4 @@
 @import "bourbon";
-@import "neat/neat";
 @import "normalize";
 
 /*!
@@ -25,7 +24,13 @@ $v-ratio: 14.4%; // 1400/202
 
 $sm-size: 480px;
 $md-size: 800px;
-$max-width: 1200px;
+$lg-size: 1200px;
+
+@mixin min-width-mq($res) {
+  @media screen and ( min-width: $res ) {
+    @content;
+  }
+}
 
 //
 // BASE
@@ -49,45 +54,57 @@ html { // Defaults
 
 h1,h2,h3,h4,h5,h6 {
 	@include prefixer(text-rendering, optimizeLegibility, webkit moz spec);
-	letter-spacing: -.06em;
+	letter-spacing: -.04em;
 	margin-top: 0;
 }
 
-h1 { font-size: 2.0em }
+h1 { font-size: 2.4em }
 h2 { font-size: 1.8em }
-h3 { font-size: 1.6em }
-h4 { font-size: 1.4em }
-h5 { font-size: 1.2em }
+h3 { font-size: 1.4em }
+h4 { font-size: 1.2em }
+h5 { font-size: 1.1em }
 h6 { font-size: 1.0em }
 
 a { // Fancy links
+	position: relative;
 	@include transition(.3s);
+	color: #6B8AEA;
+
+	&:focus,
+	&:hover { color: #000; }
+	&:active { top: .07em; }
 }
 
 .row { // Grid system
-	@include row();
-	@include pad(5%);
+	display: block;
+	padding: 4%;
+	@include clearfix;
 
 	&.center {
 		text-align: center;
 	}
 	&.short {
-		@include pad(2%);
+		padding: 2%;
 	}
 	&.toedge {
-		@include pad(5% 0);
+		padding: 5% 0;
+	}
+	.full {
+		@include clearfix;
 	}
 	.one-third {
-		@include media($md-size) {
-			@include span-columns(4);
+		@include min-width-mq($md-size) {
+			width: 31.33%;
+			margin: 0 1%;
+			float: left;
 		}
 	}
 	.one-fourth {
-		@include media($sm-size) {
+		@include min-width-mq($md-size) {
 			width: 50%;
 			float: left;
 		}
-		@include media($md-size) {
+		@include min-width-mq($md-size) {
 			width: 25%;
 			float: left;
 		}
@@ -141,37 +158,48 @@ a { // Fancy links
 
 
 .social {
-	font-family: EntypoSocial;
-	font-size: 3em;
+	display: table;
+	width: 100%;
+	font: {
+		family: EntypoSocial;
+		size: 3em;
+	}
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 
 	a {
-		position: relative;
-		@include inline-block;
-		text-decoration: none;
-		color: white;
-		background: black;
-		width: .9em;
-		line-height: .9;
-		opacity: .3;
+		display: table-cell;
+		width: 1em;
+		line-height: 1;
 		border-radius: 50%;
+		color: $lt-gray;
+		background: #666;
+		text-decoration: none;
+		text-align: center;
+		vertical-align: middle;
+		opacity: .3;
 
 		&:hover,
 		&:focus {
-			opacity: 1;
+			opacity: .9;
 		}
 		&:active {
 			top: .1em;
 		}
 	}
+	#behance:hover   { background: #1769ff; }
+	#dribbble:hover  { background: #ea4c89; }
+	#pinterest:hover { background: #cb2027; }
+	#linkedin:hover  { background: #007bb6; }
+	#twitter:hover   { background: #00aced; }
+	#instagram:hover { background: #517fa4; }
+	#github:hover    { background: #333333; }
 }
 
 
 .btn {
-	position: relative;
 	display: inline-block;
-	border: 1px solid rgba(black,.2);
+	border: 1px solid rgba(black,.1);
 	border-radius: .3em;
 	padding: 0 1em;
 	line-height: 2.5;
@@ -184,7 +212,7 @@ a { // Fancy links
 	);
 	color: $dk-gray;
 	font: {
-		size: 180%;
+		size: 110%;
 		weight: 300;
 	}
 	text-shadow: 0 1px 1px rgba(white,.2);
@@ -197,9 +225,9 @@ a { // Fancy links
 		background-color: tint($yellow, 25%);
 	}
 	&:active {
-		top: .2em;
+		top: .1em;
 		color: shade($dk-gray, 25%);
-		box-shadow: inset 0 5px 5px 0 rgba(black,.5);
+		box-shadow: inset 0 3px 3px 0 rgba(black,.5);
 		background-color: shade($yellow, 25%);
 	}
 }
@@ -210,7 +238,7 @@ a { // Fancy links
 	float: left;
 	margin-right: 1em;
 
-	@include media($md-size) {
+	@include min-width-mq($md-size) {
 		float: none;
 		margin: 0 auto .5em;
 	}
@@ -218,8 +246,8 @@ a { // Fancy links
 	.circle-icon {
 		display: table-cell;
 		width: 2em;
-		height: 2em;
-		border-radius: 100%;
+		line-height: 2;
+		border-radius: 50%;
 		color: $lt-gray;
 		background-color: $dk-gray;
 		vertical-align: middle;
@@ -238,7 +266,7 @@ a { // Fancy links
 	overflow: hidden;
 	text-align: left;
 
-	@include media($md-size) {
+	@include min-width-mq($md-size) {
 		margin: 0 auto;
 		overflow: visible;
 		text-align: inherit;
@@ -266,8 +294,9 @@ html {
 
 		.container {
 			@extend %fold;
-			@include outer-container;
+			max-width: $lg-size;
 			margin: 0 auto;
+			@include clearfix;
 		}
 
 		.fold-wrapper {
@@ -324,6 +353,6 @@ html {
 }
 
 #footer {
-	font-size: 90%;
-	color: $lt-gray;
+	font-size: 75%;
+	color: $dk-gray;
 }
