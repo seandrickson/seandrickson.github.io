@@ -1,0 +1,22 @@
+{
+  "name": "seandrickson",
+  "version": "0.0.0",
+  "authors": [
+    "Sean <seandrickson@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "homepage": "http://seandrickson.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "*",
+    "skrollr":   "*"
+  }
+}

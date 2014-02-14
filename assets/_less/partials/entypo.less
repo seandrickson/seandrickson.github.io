@@ -1,0 +1,24 @@
+@font-path: 'fonts/entypo';
+@font-family: 'entypo-social';
+
+@font-face {
+  font-family: @font-family;
+  src: url('@{font-path}/@{font-family}.eot');
+  src: url('@{font-path}/@{font-family}.eot?#iefix') format('embedded-opentype'),
+       url('@{font-path}/@{font-family}.woff') format('woff'),
+       url('@{font-path}/@{font-family}.ttf') format('truetype'),
+       url('@{font-path}/@{font-family}.svg#entypo-social') format('svg');
+}
+
+// Entypo Social Icons
+.et {
+  display: inline-block;
+  font: normal normal normal 3em/1 @font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.et-behance:before   { content: '\F34E'; }
+.et-pinterest:before { content: '\F312'; }
+.et-linkedin:before  { content: '\F318'; }
+.et-twitter:before   { content: '\F309'; }
+.et-github:before    { content: '\F300'; }

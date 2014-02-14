@@ -1,0 +1,97 @@
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    title Seandrickson
+    meta(name='decription', content='Sean Hendrickson’s Web Design & Development')
+    //
+      Trying to figure out this site?
+      You can get a better idea here:
+      http://git.io/seandrickson
+    meta(name='p:domain_verify', content='ee98c8ad6030e0e6dc52f46b90ca6d6f')
+    link(rel='stylesheet', href='//fonts.googleapis.com/css?family=Raleway:100,300,800')
+    link(rel='stylesheet', href='assets/css/main.min.css')
+    //[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]
+  body
+    #header.jumbotron.jumbotron-fullscreen
+      .jumbotron-fullscreen-inner
+        .container
+          .row
+            .col-xs-6.col-sm-4.col-md-3.col-center
+              img.img-responsive(src='assets/img/seandrickson.png', alt='Seandrickson')
+          .row
+            .col-xs-12.text-center
+              h1.section-title Web Design &amp; Development
+              p.lead Building Websites From Start To Finish
+
+    #about.jumbotron.jumbotron-fullscreen
+      .jumbotron-fullscreen-inner
+        .container
+          .row
+            .col-xs-12
+              h1.section-title The Process
+          .row
+            .col-sm-4
+              h2 Brainstorm
+              p Each project is assessed on an individual basis. This is where I determine what solution will be best for your project.
+            .col-sm-4
+              h2 Create
+              p The project is designed &amp; developed precisely. The client is brought in at each stage of the design process.
+            .col-sm-4
+              h2 Deploy
+              p Next, the website will be deployed live for everyone to see. The finishing touches will be applied &amp; the website will be launched.
+
+    #portfolio.jumbotron.jumbotron-fullscreen
+      .jumbotron-fullscreen-inner
+        .container
+          .row
+            .col-xs-12
+              h1.section-title Portfolio
+          .row
+            #loading.col-xs-12
+              h2 Loading…
+
+    #calltoaction.jumbotron.jumbotron-fullscreen
+      .jumbotron-fullscreen-inner
+        .container
+          .row
+            .col-xs-12
+              h2.text-center
+                a.btn.btn-default.btn-jumbo(href='mailto:seandrickson@gmail.com') Contact Me
+          .row
+            .col-xs-12
+              p.text-center.lighter-text or get connected:
+              ul.list-inline.text-center.social-links
+                li
+                  a.social-behance(href='http://be.net/seandrickson')
+                    i.et.et-behance
+                li
+                  a.social-pinterest(href='http://pinterest.com/seandrickson')
+                    i.et.et-pinterest
+                li
+                  a.social-linkedin(href='http://linkedin.com/in/seanhendrickson')
+                    i.et.et-linkedin
+                li
+                  a.social-twitter(href='http://twitter.com/seandrickson')
+                    i.et.et-twitter
+                li
+                  a.social-github(href='http://github.com/seandrickson')
+                    i.et.et-github
+        #footer
+          .container
+            .row
+              .col-xs-12
+                p.text-center.lighter-text
+                  | Copyright &copy; 2012
+                  script document.write('&ndash; ' + new Date().getFullYear())
+                  | &nbsp;Sean Hendrickson. All Rights Reserved &mdash; Hosted using&nbsp;
+                  a(href='http://git.io/seandrickson') Github Pages
+                  | .
+
+    //- script(src='bower_components/jquery/jquery.min.js')
+    script(src='bower_components/skrollr/dist/skrollr.min.js')
+    script var s=skrollr.init()
+    script
+      include assets/_js/behance.min.js
+      include assets/_js/analytics.min.js

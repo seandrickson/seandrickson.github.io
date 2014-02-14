@@ -1,0 +1,20 @@
+{
+  "name": "seandrickson",
+  "version": "2014.02.07",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seandrickson/start.git"
+  },
+  "devDependencies": {
+    "grunt":                 "*",
+    "grunt-contrib-coffee":  "*",
+    "grunt-contrib-connect": "*",
+    "grunt-contrib-jade":    "*",
+    "grunt-contrib-less":    "*",
+    "grunt-contrib-uglify":  "*",
+    "grunt-contrib-watch":   "*",
+    "grunt-autoprefixer":    "*",
+    "grunt-coffeelint":      "*",
+    "load-grunt-tasks":      "*"
+  }
+}
