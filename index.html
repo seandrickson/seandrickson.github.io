@@ -11,8 +11,9 @@
     http://git.io/seandrickson
     -->
     <meta name="p:domain_verify" content="ee98c8ad6030e0e6dc52f46b90ca6d6f">
-    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:100,300,800">
-    <link rel="stylesheet" href="assets/css/main.min.css">
+    <script src="//use.typekit.net/ion8sej.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
+    <link rel="stylesheet" href="assets/css/main.css">
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
   </head>
   <body>
@@ -24,7 +25,7 @@
           </div>
           <div class="row">
             <div class="col-xs-12 text-center">
-              <h1 class="section-title">Web Design &amp; Development</h1>
+              <h1 class="section-title">Web Design &amp; Development Services</h1>
               <p class="lead">Building Websites From Start To Finish</p>
             </div>
           </div>
@@ -36,7 +37,7 @@
         <div class="container">
           <div class="row">
             <div class="col-xs-12">
-              <h1 class="section-title">The Process</h1>
+              <h1 class="section-title">Process</h1>
             </div>
           </div>
           <div class="row">
@@ -106,7 +107,17 @@
         </div>
       </div>
     </div>
-    <script>!function(a){var b,c;return b=a.createElement("script"),c=a.scripts[0],b.src="//www.behance.net/v2/users/seandrickson/projects?api_key=Am3dYZpehliXhXrGIB1Lq831ivWfmBQF&callback=callback",c.parentNode.insertBefore(b,c),window.callback=function(b){var c,d,e,f;if(200===b.http_code){c="",f=b.projects,e=a.getElementById("loading");for(d in f)c+="<div class='col-xs-6 col-md-3'> <a href='"+f[d].url+"' class='thumbnail'> <img src='"+f[d].covers[404]+"' alt='"+f[d].name+"'> </a> </div>";e.outerHTML=c}}}(document);!function(a,b,c,d,e){a.GoogleAnalyticsObject=c,a[c]||(a[c]=function(){(a[c].q=a[c].q||[]).push(arguments)}),a[c].l=+new Date,d=b.createElement("script"),e=b.scripts[0],d.src="//www.google-analytics.com/analytics.js",e.parentNode.insertBefore(d,e)}(window,document,"ga"),ga("create","UA-41080159-1","seandrickson.com"),ga("send","pageview");
+    <script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script>$.getJSON("//www.behance.net/v2/users/seandrickson/projects?callback=?",{api_key:"Am3dYZpehliXhXrGIB1Lq831ivWfmBQF"},function(c){var a,e,l;e="",l=c.projects,a=$("#loading"),$.each(l,function(c,a){e+="<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3'> <a href='"+a.url+"' class='thumbnail thumbnail-nobg'> <img src='"+a.covers[404]+"' alt='"+a.name+"'> </a> </div>"}),a.replaceWith(e)});
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-41080159-1', 'seandrickson.com');
+      ga('send', 'pageview');
     </script>
   </body>
 </html>
