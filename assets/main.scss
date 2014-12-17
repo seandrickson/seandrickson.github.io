@@ -1,40 +1,42 @@
-@import 'partials/bootstrap';
-@import 'partials/overrides';
-@import 'partials/entypo';
+---
+---
 
-@images: "../img";
+//
+// Variable Overrides
+// --------------------------------------------------
 
-@sun1: #446D83; // blue
-@sun2: #F4ED73; // yellow
-@sun3: #F3A963; // lt. orange
-@sun4: #F06443; // orange
-@sun5: #8C3F2D; // dk. orange
+$images: "../img";
 
-@clo1: #001E5B; // dk. blue
-@clo2: #03408A; // blue
-@clo3: #086AA7; // lt. blue
-@clo4: #21A1BE; // teal
-@clo5: #D7ECF1; // lt. teal
+$sun1: #446D83; // blue
+$sun2: #F4ED73; // yellow
+$sun3: #F3A963; // lt. orange
+$sun4: #F06443; // orange
+$sun5: #8C3F2D; // dk. orange
 
-@nig1: #8E8E8E; // gray
-@nig2: #F2F2F2; // white
-@nig3: #414141; // dk. gray
-@nig4: #BEBEBE; // lt. gray
-@nig5: #0C0C0C; // black
+$clo1: #001E5B; // dk. blue
+$clo2: #03408A; // blue
+$clo3: #086AA7; // lt. blue
+$clo4: #21A1BE; // teal
+$clo5: #D7ECF1; // lt. teal
 
-@tre1: #BEC1BC; // lt. gray
-@tre2: #BDAB3B; // yellow
-@tre3: #267200; // lt. green
-@tre4: #0E4000; // green
-@tre5: #112502; // dk. green
+$nig1: #8E8E8E; // gray
+$nig2: #F2F2F2; // white
+$nig3: #414141; // dk. gray
+$nig4: #BEBEBE; // lt. gray
+$nig5: #0C0C0C; // black
+
+$tre1: #BEC1BC; // lt. gray
+$tre2: #BDAB3B; // yellow
+$tre3: #267200; // lt. green
+$tre4: #0E4000; // green
+$tre5: #112502; // dk. green
 
 
 
 html, body { height: 100%; }
 
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-  text-rendering: optimizeLegibility;
+body {
+  font-family: "Raleway", sans-serif;
 }
 
 h1, .h1 {
@@ -42,7 +44,8 @@ h1, .h1 {
 }
 
 .col-center {
-  .center-block;
+  margin-left: auto;
+  margin-right: auto;
   float: none;
 }
 
@@ -56,47 +59,45 @@ h1, .h1 {
   background-color: #222;
   background-size: cover;
   background-position: 50% 50%;
-  p {
-    font-weight: 100;
-  }
+  p { font-weight: 100; }
   &-inner {
     display: table-cell;
     vertical-align: middle;
   }
   &:before {
-    content: ' ';
+    content: '';
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
   }
 }
 
   #header {
-    color: contrast(@sun4);
-    background-image: url('@{images}/bg_sunset.jpg');
+    color: black;
+    background-image: url('#{$images}/bg_sunset.jpg');
     &:before {
-      background-color: fade(@sun4, 80%);
+      background-color: rgba($sun4, .8);
     }
   }
   #about {
-    color: contrast(@clo2);
-    background-image: url('@{images}/bg_clouds.jpg');
+    color: white;
+    background-image: url('#{$images}/bg_clouds.jpg');
     &:before {
-      background-color: fade(@clo2, 80%);
+      background-color: rgba($clo2, .8);
     }
   }
   #portfolio {
-    color: contrast(@nig3);
-    background-image: url('@{images}/bg_night.jpg');
+    color: white;
+    background-image: url('#{$images}/bg_night.jpg');
     &:before {
-      background-color: fade(@nig3, 80%);
+      background-color: rgba($nig3, .8);
     }
   }
   #calltoaction {
-    color: contrast(@tre3);
-    background-image: url('@{images}/bg_tree.jpg');
+    color: white;
+    background-image: url('#{$images}/bg_tree.jpg');
     font-size: .9em;
     &:before {
-      background-color: fade(@tre3, 80%);
+      background-color: rgba($tre3, .8);
     }
   }
   #footer {
@@ -136,15 +137,14 @@ h1, .h1 {
 // Circular Social Buttons
 .social-links {
   a {
-    box-sizing: content-box;
-    display: table-cell;
-    width: 3em;
-    line-height: 1;
+    display: inline-block;
+    width: 2em;
+    height: 2em;
+    font-size: 2em;
     border: 2px solid;
     border-radius: 50%;
     color: white;
-    text-decoration: none;
-    text-align: center;
+    vertical-align: middle;
 
     &:hover,
     &:focus {
@@ -155,6 +155,7 @@ h1, .h1 {
       top: .1em;
     }
   }
+  .fa { vertical-align: bottom; }
 }
   .social-behance   { &:hover, &:focus { color: #1769ff; } }
   .social-pinterest { &:hover, &:focus { color: #cb2027; } }

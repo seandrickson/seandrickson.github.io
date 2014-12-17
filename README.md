@@ -5,12 +5,10 @@
 
 ##### Web Frameworks:
 * [Jekyll](http://jekyllrb.com/)
-* [Bourbon](http://bourbon.io)
-* [Bourbon Neat](http://neat.bourbon.io)
+* [Bootstrap](http://getbootstrap.com)
 
 ##### Software Used:
-* [BBEdit](http://barebones.com/products/bbedit/)
-* [CodeKit](http://incident57.com/codekit/)
+* [Atom](http://atom.io)
 * [Terminal](http://en.wikipedia.org/wiki/Terminal_%28OS_X%29)
 * [Github for Mac](http://mac.github.com/)
 
