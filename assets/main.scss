@@ -36,11 +36,18 @@ $tre5: #112502; // dk. green
 html, body { height: 100%; }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
 }
 
 h1, .h1 {
-  font-weight: 100;
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+h2, .h2 {
+  font-weight: 600;
 }
 
 .col-center {
@@ -119,7 +126,9 @@ h1, .h1 {
 // Mega Button
 .btn-jumbo {
   font-size: 1.2em;
+  font-family: "Playfair Display";
   font-weight: 900;
+  font-style: italic;
   padding: 0 1em;
   line-height: 2;
   border: 2px solid;
@@ -140,7 +149,7 @@ h1, .h1 {
     display: inline-block;
     width: 2em;
     height: 2em;
-    font-size: 2em;
+    font-size: 1.5em;
     border: 2px solid;
     border-radius: 50%;
     color: white;

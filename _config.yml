@@ -1,0 +1,11 @@
+timezone: America/Los_Angeles
+
+sass:
+  style: :compressed
+
+defaults:
+  -
+    scope:
+      path: ""
+    values:
+      layout: "default"
