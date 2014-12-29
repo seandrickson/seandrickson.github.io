@@ -1,0 +1,304 @@
+---
+# Front matter comment to ensure Jekyll properly reads file.
+---
+
+//
+// Variable Overrides
+// --------------------------------------------------
+
+$images: "../img";
+
+$sun1: #446D83; // blue
+$sun2: #F4ED73; // yellow
+$sun3: #F3A963; // lt. orange
+$sun4: #F06443; // orange
+$sun5: #8C3F2D; // dk. orange
+
+$clo1: #001E5B; // dk. blue
+$clo2: #03408A; // blue
+$clo3: #086AA7; // lt. blue
+$clo4: #21A1BE; // teal
+$clo5: #D7ECF1; // lt. teal
+
+$nig1: #8E8E8E; // gray
+$nig2: #F2F2F2; // white
+$nig3: #414141; // dk. gray
+$nig4: #BEBEBE; // lt. gray
+$nig5: #0C0C0C; // black
+
+$tre1: #BEC1BC; // lt. gray
+$tre2: #BDAB3B; // yellow
+$tre3: #267200; // lt. green
+$tre4: #0E4000; // green
+$tre5: #112502; // dk. green
+
+
+
+html, body { height: 100%; }
+
+body {
+  font-weight: 300;
+  font-family: "Open Sans", sans-serif;
+}
+
+a,
+.alert,
+input.form-control,
+textarea.form-control,
+button.btn {
+  -webkit-transition: 250ms;
+  transition: 250ms;
+}
+
+h1, .h1 {
+  font-family: "Playfair Display", serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+h2, .h2 {
+  font-weight: 600;
+}
+
+.col-center {
+  margin-left: auto;
+  margin-right: auto;
+  float: none;
+}
+
+.jumbotron-fullscreen {
+  position: relative;
+  display: table;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #222;
+  background-size: cover;
+  background-position: 50% 100%;
+
+  p { font-weight: 100; }
+
+  .jumbotron-fullscreen-inner {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+  }
+}
+
+#header {
+  color: black;
+  background-image: url('#{$images}/bg_sunset.jpg');
+
+  &:before {
+    background-color: rgba($sun4, .8);
+  }
+}
+
+#about {
+  color: white;
+  background-image: url('#{$images}/bg_clouds.jpg');
+
+  &:before {
+    background-color: rgba($clo2, .8);
+  }
+}
+
+#portfolio {
+  color: white;
+  background-image: url('#{$images}/bg_night.jpg');
+
+  &:before {
+    background-color: rgba($nig3, .8);
+  }
+}
+
+#calltoaction {
+  color: white;
+  background-image: url('#{$images}/bg_tree.jpg');
+
+  &:before {
+    background-color: rgba($tre3, .8);
+  }
+}
+
+#footer {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+
+  p { font-size: .85em; }
+
+  a {
+    color: white;
+    text-decoration: underline;
+
+    &:hover, &:focus, &:active, &.active {
+      color: white;
+    }
+  }
+}
+
+.form-group {
+  margin: 1em 0;
+}
+
+label.h4 {
+  margin-top: 0;
+}
+
+.btn,
+.form-control {
+  font-weight: 600;
+  color: #fff;
+  border: 1px solid #fff;
+  background-color: transparent;
+
+  &:hover, &:focus, &:active, &.active {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+.btn,
+.social-links a {
+  box-shadow: 0 .3rem .3rem rgba(0,0,0,.5);
+
+  &:hover, &:focus, &:active, &.active {
+    box-shadow: 0 .3rem .3rem rgba(0,0,0,.2);
+  }
+}
+
+.form-control {
+  box-shadow: inset 0 .3rem .3rem rgba(0,0,0,.5);
+
+  &:hover, &:focus, &:active, &.active {
+    box-shadow: inset 0 .3rem .3rem rgba(0,0,0,.2);
+  }
+  &::-webkit-input-placeholder { color: rgba(255,255,255,.7); }
+  &::-moz-placeholder { color: rgba(255,255,255,.7); }
+  &:-ms-input-placeholder { color: rgba(255,255,255,.7); }
+  &::placeholder { color: rgba(255,255,255,.7); }
+}
+
+.btn-submit {
+  font-size: 2em;
+  font-family: "Playfair Display";
+  font-weight: 900;
+  font-style: italic;
+  padding: 0 1em;
+  line-height: 2;
+  height: 2em;
+  border-radius: .2em;
+  overflow: hidden;
+
+  .msg {
+    height: 100%;
+    opacity: 1;
+  }
+
+  .loading-msg,
+  .loaded-msg {
+    height: 0;
+    opacity: 0;
+  }
+
+  &.loading {
+    .loading-msg {
+      height: 100%;
+      opacity: 1;
+      -webkit-animation: 1s loading infinite alternate;
+      animation: 1s loading infinite alternate;
+    }
+  }
+
+  &.loaded {
+    background: #0f0;
+    
+    .msg {
+      height: 0;
+      opacity: 0;
+    }
+    .loaded-msg {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}
+
+@-webkit-keyframes loading {
+  to { opacity: 0 }
+}
+
+@keyframes loading {
+  to { opacity: 0 }
+}
+
+.alert-danger {
+  font-weight: 600;
+  color: #fff;
+  border: 0;
+  background: rgba(255,0,0,.5);
+
+  &.hide-alert {
+    opacity: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.lighter-text {
+  margin: .8em 0;
+  font-size: 1.2em;
+  color: rgba(255,255,255,.7);
+}
+
+// Circular Social Buttons
+.social-links {
+  .fa {
+    box-sizing: content-box;
+    width: 2em;
+    line-height: 2;
+    font-size: 1.3em;
+    vertical-align: middle;
+  }
+  
+  a {
+    display: block;
+    border: 1px solid;
+    color: white;
+    border-radius: 50%;
+
+    &:hover,
+    &:focus {
+      color: white;
+    }
+    &:active {
+      -webkit-transform: translateY(.1em);
+      transform: translateY(.1em);
+    }
+  }
+}
+
+.social-behance   { &:hover, &:focus { background-color: #1769ff; } }
+.social-pinterest { &:hover, &:focus { background-color: #cb2027; } }
+.social-linkedin  { &:hover, &:focus { background-color: #007bb6; } }
+.social-twitter   { &:hover, &:focus { background-color: #00aced; } }
+.social-github    { &:hover, &:focus { background-color: #333333; } }
+
+.thumbnail-nobg {
+  padding: 0;
+  background: none;
+  border: 0;
+  border-radius: 0;
+
+  img {
+    border: 1px solid #fff;
+    border-radius: 5px;
+  }
+}
