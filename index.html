@@ -1,11 +1,59 @@
 ---
-title: Seandrickson
-layout: default
+# Front matter comment to ensure Jekyll properly reads file.
 ---
 
-<link href="css/index.css" rel="stylesheet">
-{% include index/header.html %}
-{% include index/about.html %}
-{% include index/portfolio.html %}
-{% include index/calltoaction.html %}
-<script src="js/index.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Seandrickson Web Development</title>
+        <meta name="decription" content="Sean Hendrickson’s Web Design &amp; Development">
+        <!--
+        Trying to figure out this site?
+        http://git.io/seandrickson
+        -->
+        <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700" rel="stylesheet">
+        <link href="css/index.css" rel="stylesheet">
+    </head>
+    <body>
+        <header style="background-image: url(img/bg_tree.jpg)">
+            <section>
+                <img src="img/seandrickson.png" alt="Seandrickson" class="logo">
+                <h1>Seandrickson Web Development</h1>
+            </section>
+        </header>
+        <footer>
+            <section>
+                <ul class="social-links">
+                    <li>
+                        <a href="http://linkedin.com/in/seanhendrickson" class="social-icon social-icon-linkedin">
+                            {% include_relative img/linkedin.svg %}
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://github.com/seandrickson" class="social-icon social-icon-github">
+                            {% include_relative img/github.svg %}
+                        </a>
+                    </li>
+                </ul>
+                <p class="legal">
+                    Copyright &copy; 2012 &ndash; 
+                    <script>
+                        document.write(new Date().getFullYear())
+                    </script> 
+                    Sean Hendrickson. All Rights Reserved.
+                </p>
+            </section>
+        </footer>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-41080159-1', 'seandrickson.com');
+            ga('send', 'pageview');
+        </script>
+    </body>
+</html>
