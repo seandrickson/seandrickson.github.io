@@ -11,4 +11,3 @@
 * [Github Desktop](https://desktop.github.com/)
 
 -- **Sean Hendrickson**
-<seandrickson@gmail.com>
