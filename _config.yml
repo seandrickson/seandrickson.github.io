@@ -2,6 +2,3 @@ exclude:
 - CNAME
 - README.md
 - Gemfile*
-- img/**
-- css/**
-- favicon.ico
